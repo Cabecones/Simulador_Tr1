@@ -1,0 +1,3 @@
+D:/User/Downloads/Simulador/cmake-build-debug/CMakeFiles/Simulador.dir
+D:/User/Downloads/Simulador/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/User/Downloads/Simulador/cmake-build-debug/CMakeFiles/rebuild_cache.dir

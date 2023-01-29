@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1675024981 source:f:\unb\tr1\camadafisica.cpp
+	"CamadaFisica.hpp"
+
+1675023350 f:\unb\tr1\camadafisica.hpp
+	<iostream>
+	<string>
+	<vector>
+	<bitset>
+	<math.h>
+
+1675013123 source:f:\unb\tr1\simulador.cpp
+	"CamadaFisica.hpp"
+	<iostream>
+
