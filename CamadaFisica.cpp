@@ -1,7 +1,7 @@
 #include "CamadaFisica.hpp"
 
-volatile int tipoDeCondificacao = 1;
-volatile int tipoDeDecodificacao = 1;
+volatile int tipoDeCondificacao = 2;
+volatile int tipoDeDecodificacao = 2;
 
 void AplicacaoTransmissora(void){
     string mensagem;
@@ -73,8 +73,18 @@ vector<int> CamadaFisicaTransmissoraCodificacaoManchester (vector<int> quadro) {
 }
 
 vector<int> CamadaFisicaTransmissoraCodificacaoBipolar (vector<int> quadro) {
-    for (auto i: quadro)
-        cout << i << ' ';
+    int size_vector = (int) quadro.size();
+    bool alterna = true;
+    for (int inner = 0; inner < size_vector; inner++) {
+        if (quadro[inner] == 1){
+            if (alterna){
+                quadro.at(inner) = 1;
+            }else{
+                quadro.at(inner) = -1;
+            }
+            alterna = !alterna;
+        }
+    }
     return quadro;
 }
 
@@ -140,6 +150,12 @@ vector<int> CamadaFisicaReceptoraCodificacaoManchester (vector<int> quadro) {
 }
 
 vector<int> CamadaFisicaReceptoraCodificacaoBipolar (vector<int> quadro) {
+    int size_vector = (int) quadro.size();
+    for (int inner = 0; inner < size_vector; inner++) {
+        if (quadro[inner] != 0){
+            quadro.at(inner) = 1;
+        }
+    }
     return quadro;
 }
 
@@ -166,9 +182,9 @@ void CamadaDeAplicacaoReceptora (vector<int> quadro) {
     for (int i = mensagemSize; i > -1; i--){
         mensagem += mensagemAux[i];
     }
-    AplicacaoTransmissora(mensagem);
+    AplicacaoReceptora(mensagem);
 }
 
-void AplicacaoTransmissora (string mensagem) {
+void AplicacaoReceptora (string mensagem) {
     cout << "\nA mensagem recebida foi: " << mensagem << endl;
 }

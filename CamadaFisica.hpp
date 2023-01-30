@@ -30,4 +30,4 @@ vector<int> CamadaFisicaReceptoraCodificacaoBipolar (vector<int> quadro);
 
 void CamadaDeAplicacaoReceptora (vector<int> quadro);
 
-void AplicacaoTransmissora (string mensagem);
+void AplicacaoReceptora (string mensagem);
